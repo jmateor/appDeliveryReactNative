@@ -1,0 +1,25 @@
+{
+  "name": "backenddelivery",
+  "version": "1.0.0",
+  "description": "Backend de la aplicacion delivery",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flutter",
+    "app",
+    "delivery",
+    "nodejs"
+  ],
+  "author": "Jose Mateo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "http": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.14.1"
+  }
+}
