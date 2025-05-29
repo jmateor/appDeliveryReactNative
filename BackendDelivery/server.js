@@ -4,6 +4,7 @@ const http = require('http');
 const Server = http.createServer(app);
 const logger = require('morgan');
 const cors = require('cors');
+const passport = require('passport');
 
 /*
 * IMPORTAR RUTAS
@@ -15,7 +16,12 @@ const PORT = process.env.PORT || 3000;
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
 
 app.disable('x-powered-by');
 
@@ -27,7 +33,7 @@ app.set('port', PORT);
 */
 usersRoutes(app);
 
-server = Server.listen(3000, '192.168.1.32' || 'localhost', function() {
+server = Server.listen(3000, '192.168.100.191' || 'localhost', function() {
   console.log('Aplicacion de Noodejs ' + process.pid + ' Iniciada... ')
 });
 
